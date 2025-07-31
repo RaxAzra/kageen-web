@@ -4,6 +4,14 @@ html, body {
   height: 100%;
 }
 
+body {
+  font-family: 'Aipon', sans-serif;
+}
+
+* {
+  font-family: 'Aipon', sans-serif;
+}
+
 html {
   background-color: #000000;
 }
@@ -27,6 +35,13 @@ body {
   overflow-y: auto;   /* Scroll vertikal aktif */
 }
 
+@font-face {
+  font-family: 'Aipon';
+  src: url('./source/aipon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -43,18 +58,18 @@ body {
 .text-wrapper h1 {
   color: #ffffff;
   font-size: 3.5rem;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   letter-spacing: 2px;
   margin: 0;
   white-space: nowrap; /* ⛔ jangan pecah baris */
-  overflow: hidden;
+  overflow: visible;
   text-overflow: ellipsis;
 }
 
 .text-wrapper p {
   color: #cccccc;
   font-size: 1.2rem;
-  font-family: 'Satoshi', sans-serif; /* Font untuk subjudul */
+  font-family: 'Aipon', sans-serif; /* Font untuk subjudul */
   margin-top: 10px;
 }
 
@@ -182,14 +197,14 @@ body {
 }
 
 .jelajah-header h2 {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 1.8rem;
   color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .jelajah-header p {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   color: #ccc;
   font-size: 1rem;
   max-width: 600px;
@@ -224,12 +239,12 @@ body {
 
 .modal-content h3 {
   margin-top: 0;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 1.4rem;
 }
 
 .modal-content p {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 1rem;
   margin-top: 10px;
 }
@@ -246,7 +261,7 @@ body {
 }
 
 .jelajahi-section {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   padding: 40px 0;
   overflow: hidden;
   display: flex;
@@ -305,7 +320,7 @@ body {
 }
 
 .growth-title {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 40px;
   margin-bottom: 30px;
   color: #ffffff;
@@ -326,7 +341,7 @@ body {
 }
 
 .growth-label {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   color: #fff;
   font-weight: bold;
   margin-bottom: 10px;
@@ -411,12 +426,12 @@ body {
 
 .popup-content h3 {
   margin-top: 0;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 1.4rem;
 }
 
 .popup-content p {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 1rem;
   margin-top: 10px;
 }
@@ -452,7 +467,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   font-weight: 500;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   cursor: pointer;
   transition: background 0.3s ease;
   display: inline-block; /* balik lagi */
@@ -614,7 +629,7 @@ body.popup-open {
 }
 
 .timeline-section {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   padding: 4rem 2rem;
   position: relative;
   z-index: 1;
@@ -622,7 +637,7 @@ body.popup-open {
 }
 
 .timeline-title {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
@@ -667,7 +682,7 @@ body.popup-open {
   font-weight: bold;
   color: white;
   margin-bottom: 1.5rem;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
 }
 
 .admin-list {
@@ -709,7 +724,7 @@ body.popup-open {
 }
 
 .admin-nickname {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
@@ -723,7 +738,7 @@ body.popup-open {
 }
 
 .admin-role {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 0.9rem;
   color: #ffffff;
   font-weight: 600;
@@ -735,7 +750,7 @@ body.popup-open {
 }
 
 #stickyNavbar {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   position: fixed;
   top: 16px; /* lebih deket ke atas */
   left: 50%;
@@ -878,7 +893,7 @@ body.popup-open {
 }
 
 .top-title {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 80px;
@@ -965,7 +980,7 @@ body.popup-open {
 }
 
 .username {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-size: 0.7rem;
   opacity: 0.6;
   white-space: nowrap;
@@ -974,7 +989,7 @@ body.popup-open {
 }
 
 .rank-label {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Aipon', sans-serif;
   font-weight: bold;
   color: #888;
   font-size: 0.7rem;
@@ -1020,4 +1035,12 @@ body.popup-open {
   .username {
     font-size: 0.65rem;
   }
+}
+
+.glow-text {
+  color: #ffffff !important;
+  text-shadow:
+    0 0 5px #4b0082,
+    0 0 10px #5e2d79,
+    0 0 20px #6a0dad;
 }
