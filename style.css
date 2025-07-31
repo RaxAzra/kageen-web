@@ -1022,3 +1022,24 @@ body.popup-open {
     font-size: 0.65rem;
   }
 }
+
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: #4fc3f7;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.music-btn:hover {
+  background-color: #0288d1;
+}
