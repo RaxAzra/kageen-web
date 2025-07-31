@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="scroll-restoration" content="manual" />
+
+  <!-- Page title -->
+  <title>𝗞𝗮𝗴𝗲𝗻𝗼𝘂 𝗙𝗮𝗺𝗶𝗹𝘆</title>
+
+  <!-- Favicon and app icon -->
+  <link rel="icon" href="./source/komunitas.jpg" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./source/komunitas.jpg" />
+  <link rel="shortcut icon" href="./source/komunitas.jpg" type="image/x-icon" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="𝗞𝗮𝗴𝗲𝗻𝗼𝘂 𝗙𝗮𝗺𝗶𝗹𝘆" />
+  <meta property="og:description" content="A clan of anime creator. Join now!" />
+  <meta property="og:image" content="https://ajrahhh.my.id/source/komunitas.jpg" />
+  <meta property="og:url" content="https://ajrahhh.my.id" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts: Manrope & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Additional fonts: Inter & Satoshi (Fontshare) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS (for carousels/sliders) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+<!-- Hero section with images, title, and action buttons -->
+<section class="hero">
+  <div class="hero-album">
+    <img src="source/gen_1.jpg" alt="Member 1" />
+    <img src="source/komunitas.jpg" alt="Member 2" />
+    <img src="source/gen_2.jpg" alt="Member 3" />
+  </div>
+
+  <div class="text-wrapper">
+    <h1>Kagenou Family</h1>
+    <p>Sebuah marga edit para kreator anime.</p>
+  </div>
+
+  <div class="hero-buttons">
+    <a href="#jelajah" class="hero-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 2L15 8l6 2-6 2-2 6-2-6-6-2 6-2 2-6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      Jelajahi
+    </a>
+
+    <button id="btnPengumuman" class="hero-btn" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      Info
+    </button>
+  </div>
+</section>
+
+<!-- Announcement modal -->
+<div id="pengumumanModal" class="modal">
+  <div class="modal-content">
+    <h3>Pengumuman</h3>
+    <p>gada info, out aj</p>
+  </div>
+</div>
+
+<!-- Jelajahi section (sub-groups carousel) -->
+<section id="jelajah" class="jelajahi-section">
+  <div class="jelajah-wrapper">
+
+    <div class="jelajah-header">
+      <h2>Sub Grup Kagenou</h2>
+      <p>Kenali grup dibawah naungan Kagenou Family.</p>
+    </div>
+
+    <div class="carousel-scroll" onwheel="scrollHorizontally(event)">
+      
+      <div class="carousel-slide">
+        <img src="source/gen_1.jpg" alt="Grup 1" draggable="false" />
+        <h3>Kagenou Family</h3>
+        <p>Ini kageen gen 1 ygy</p>
+      </div>
+
+      <div class="carousel-slide" id="komunitas">
+        <img src="source/komunitas.jpg" alt="Grup 2" draggable="false" />
+        <h3>Komunitas KGN</h3>
+        <p>nah, ini komunitasnya</p>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="source/gen_2.jpg" alt="Grup 3" draggable="false" />
+        <h3>Kagenou Family II</h3>
+        <p>Ini kageen gen 2 ygy</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Sticky navigation bar -->
+<header id="stickyNavbar">
+  <img src="source/komunitas.jpg" alt="Logo KGN" class="navbar-logo" draggable="false" />
+  <nav class="nav-links">
+    <a href="#growthBars">Member</a>
+    <span class="separator">|</span>
+    <a href="#topMem">Top</a>
+    <span class="separator">|</span>
+    <a href="#tutorial">Join</a>
+    <span class="separator">|</span>
+    <a href="#leaderSection">Leader</a>
+  </nav>
+</header>
+
+<!-- Member growth section -->
+<section class="member-growth-section">
+  <h2 class="growth-title">Jumlah Member</h2>
+  <div id="growthBars" class="growth-bars"></div>
+</section>
+
+<!-- Button to open member registration popup -->
+<div class="hero-buttons">
+  <button class="hero-btn" id="btnDaftarMember" onclick="bukaPopup('popupMember')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <circle cx="12" cy="8" r="4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    Daftar Member
+  </button>
+</div>
+
+<!-- Popup: Member registration -->
+<div id="popupMember" class="popup-member">
+  <div class="popup-content">
+    <h3>Daftar Member</h3>
+
+    <input
+      type="text"
+      id="searchMember"
+      placeholder="Cari nickname ..."
+      style="padding: 6px 10px; width: 90%; margin: 8px 0; border-radius: 8px; border: none; outline: none; background: rgba(255,255,255,0.1); color: white; font-size: 14px;"
+    />
+
+    <div class="member-list-scroll">
+      <ol id="listMember" style="padding-left: 20px;"></ol>
+    </div>
+
+    <p id="jumlahAnggota" style="margin-top: 20px; font-size: 14px; color: #ccc;">Menghitung member ...</p>
+  </div>
+</div>
+
+<!-- Popup: Member detail view -->
+<div id="popupDetail" class="popup-member">
+  <div class="popup-content">
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<!-- Top Member Section -->
+<section id="topMem" class="top-member-section">
+  <h2 class="top-title">Top Member Teratas</h2>
+  <div id="topPodium" class="top-podium"></div>
+</section>
+
+<!-- Tutorial / Seleksi section -->
+<section id="tutorial" class="timeline-section animate-on-scroll">
+  <h2 class="timeline-title">Seleksi Marga Kagenou Family</h2>
+  <div class="timeline-container">
+
+    <div class="timeline-item left animate-step">
+      <div class="timeline-content">
+        <div class="icon-circle">1</div>
+        <div class="text">
+          Silahkan bergabung di Grup Seleksi Kagenou,
+          <a href="https://chat.whatsapp.com/JOpfDA7ooxqKRAGYcAYpX7?mode=r_c" target="_blank" style="color:#a64eff; font-weight:600;">klik di sini</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item right animate-step">
+      <div class="timeline-content">
+        <div class="text">
+          Setelah bergabung, klik tombol <b>Lanjutkan</b> dari bot Sumika untuk melanjutkan seleksi.
+        </div>
+        <div class="icon-circle">2</div>
+      </div>
+    </div>
+
+    <div class="timeline-item left animate-step">
+      <div class="timeline-content">
+        <div class="icon-circle">3</div>
+        <div class="text">
+          Lalu ikuti step atau langka dari Bot atau ketik <code>.seleksi</code> untuk memulai seleksi secara manual.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item right animate-step">
+      <div class="timeline-content">
+        <div class="text">Jika step telah diikuti. Silahkan tunggu respon dari admin grup.</div>
+        <div class="icon-circle">4</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Admin / Leader section -->
+<h2 class="admin-title">Leader Family Kagenou</h2>
+<div class="admin-wrapper" id="leaderSection">
+  <div class="admin-list" onwheel="scrollHorizontally(event)">
+    
+    <!-- Left spacer -->
+    <div class="admin-spacer"></div>
+
+    <!-- Admin card 1 -->
+    <div class="admin-card">
+      <img src="./source/admin/sora.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Jraa Senpai</p>
+      <p class="admin-username">𝙎𝙤𝙧𝙖𝙒𝙖𝙣𝙜𝙮𝙮 ft 𝗔𝗣</p>
+      <p class="admin-role">Leader Bot</p>
+    </div>
+
+    <!-- Admin card 2 -->
+    <div class="admin-card" id="ryy">
+      <img src="./source/admin/ryy.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Ryy Sensei</p>
+      <p class="admin-username">𝙍𝙮𝙮𝙆𝙖𝙜𝙚𝙣𝙤𝙪`𝐍𝐂𝐀</p>
+      <p class="admin-role">Pemilik</p>
+    </div>
+
+    <!-- Admin card 3 -->
+    <div class="admin-card">
+      <img src="./source/admin/ranz.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Ranz Hengker</p>
+      <p class="admin-username">𝙍𝙖𝙣𝙯𝙆𝙖𝙜𝙚𝙣𝙤𝙪`𝐍𝐂𝐀</p>
+      <p class="admin-role">Leader Bot</p>
+    </div>
+
+    <!-- Right spacer -->
+    <div class="admin-spacer"></div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2025 <a href="https://www.tiktok.com/@sorawangyy" target="_blank">Sora</a> &amp; <a href="https://www.tiktok.com/@kagenouofficial" target="_blank">KDev's</a>. Hak cipta dilindungi.</p>
+  <p>📱 Ikuti <a href="https://www.tiktok.com/@kagenouofficial" target="_blank">Kagenou Family</a> di TikTok</p>
+</footer>
+
+<!-- Script: Prevent right-click and drag on nav links -->
+<script>
+  const navLinks = document.querySelector('.nav-links');
+
+  navLinks.addEventListener('contextmenu', e => e.preventDefault());
+
+  navLinks.querySelectorAll('*').forEach(el => {
+    el.setAttribute('draggable', 'false'); // Cegah drag native
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+</script>
+
+<!-- Script: Fetch and display top 3 KGN members in podium layout -->
+<script>
+  fetch('./database/top_kgn.json')
+    .then(res => res.json())
+    .then(data => {
+      const members = Object.values(data);
+      members.sort((a, b) => b.count - a.count);
+      const top3 = members.slice(0, 3);
+
+      const posisiIcon = {
+        1: {
+          class: 'gold',
+          svg: `<svg width="40" height="40" viewBox="0 0 24 24" fill="#FFD700" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 3H7v3H2v3a5 5 0 005 5h2a3 3 0 006 0h2a5 5 0 005-5V6h-5V3zM4 9V7h3v2a3 3 0 01-3 3zm16 0a3 3 0 01-3 3V7h3v2zM9 18a3 3 0 006 0v-1H9v1zm-1 2h8v1H8v-1z"/>
+               </svg>`
+        },
+        2: {
+          class: 'silver',
+          svg: `<svg width="40" height="40" viewBox="0 0 24 24" fill="#C0C0C0" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 3H7v3H2v3a5 5 0 005 5h2a3 3 0 006 0h2a5 5 0 005-5V6h-5V3zM4 9V7h3v2a3 3 0 01-3 3zm16 0a3 3 0 01-3 3V7h3v2zM9 18a3 3 0 006 0v-1H9v1zm-1 2h8v1H8v-1z"/>
+               </svg>`
+        },
+        3: {
+          class: 'bronze',
+          svg: `<svg width="40" height="40" viewBox="0 0 24 24" fill="#cd7f32" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 3H7v3H2v3a5 5 0 005 5h2a3 3 0 006 0h2a5 5 0 005-5V6h-5V3zM4 9V7h3v2a3 3 0 01-3 3zm16 0a3 3 0 01-3 3V7h3v2zM9 18a3 3 0 006 0v-1H9v1zm-1 2h8v1H8v-1z"/>
+               </svg>`
+        }
+      };
+
+      const posisi = [1, 0, 2]; // urutan visual: kiri (top 2), tengah (top 1), kanan (top 3)
+      const podium = document.getElementById("topPodium");
+
+      posisi.forEach(i => {
+        const m = top3[i];
+        if (!m) return;
+
+        const posisiRank = i === 0 ? 2 : (i === 1 ? 1 : 3);
+        const icon = posisiIcon[posisiRank];
+
+        const box = document.createElement('div');
+        const isTop1 = posisiRank === 1;
+        const chibiClass = `chibi-img${isTop1 ? ' chibi-top1' : ''}`;
+        box.className = `top-box top-${posisiRank}`;
+        box.innerHTML = `
+            <div class="chibi-container">
+              <img src="./source/top/${posisiRank}.png" alt="Chibi Top ${posisiRank}" class="${chibiClass}" />
+            </div>
+            <div class="trophy-icon">${icon.svg}</div>
+            <p class="nickname">${m.nickname}</p>
+            <p class="username">@${m.username}</p>
+            <p class="rank-label">Top ${posisiRank}</p>
+          </div>
+        `;
+
+        podium.appendChild(box);
+      });
+    });
+</script>
+
+<!-- Script: Toggle announcement modal -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btnPengumuman');
+  const modal = document.getElementById('pengumumanModal');
+
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+</script>
+
+<!-- Script: Smooth scroll to #jelajah on button click -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const jelajahBtn = document.querySelector('a[href="#jelajah"]');
+
+  jelajahBtn?.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector('#jelajah');
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  });
+});
+</script>
+
+<!-- Script: Popup management & navbar visibility -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('stickyNavbar');
+    const jelajahSection = document.querySelector('#jelajah');
+    const popupMember = document.getElementById('popupMember');
+    const popupDetail = document.getElementById('popupDetail');
+
+    function updateNavbarVisibility() {
+      if (!jelajahSection || !navbar) return;
+
+      const jelajahTop = jelajahSection.getBoundingClientRect().top;
+
+      if (popupMember.classList.contains('show')) {
+        navbar.classList.remove('show');
+      } else {
+        navbar.classList.toggle('show', jelajahTop <= 50);
+      }
+    }
+
+    function tutupPopup(id) {
+      const popup = document.getElementById(id);
+      if (popup) popup.classList.remove('show');
+
+      const memberMasihTerbuka = popupMember?.classList.contains('show');
+      if (!memberMasihTerbuka) {
+        document.body.style.overflow = 'auto';
+      }
+
+      updateNavbarVisibility();
+    }
+
+    function tutupSemuaPopup() {
+      tutupPopup('popupMember');
+      tutupPopup('popupDetail');
+    }
+
+    window.bukaPopup = function(id) {
+      const popup = document.getElementById(id);
+      if (popup) {
+        popup.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        navbar.classList.remove('show');
+      }
+    }
+
+    window.tutupPopup = tutupPopup;
+    window.tutupSemuaPopup = tutupSemuaPopup;
+
+    window.addEventListener('scroll', updateNavbarVisibility);
+
+    window.addEventListener('click', e => {
+      if (popupMember.classList.contains('show') && e.target === popupMember) {
+        tutupSemuaPopup();
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && popupMember.classList.contains('show')) {
+        tutupSemuaPopup();
+      }
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('load', () => {
+    const target = document.getElementById('komunitas');
+    const container = document.querySelector('.carousel-scroll');
+    if (target && container) {
+      const offset = target.offsetLeft - (container.offsetWidth / 2) + (target.offsetWidth / 2);
+      container.scrollTo({
+        left: offset,
+        behavior: 'smooth'
+      });
+    }
+  });
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('.carousel-scroll');
+    const cards = document.querySelectorAll('.carousel-slide');
+    const target = cards[1]; // otomatis ke slide ke-2
+
+    const scrollToCenter = () => {
+      const listRect = list.getBoundingClientRect();
+      const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+      list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    };
+
+    setTimeout(scrollToCenter, 200); // delay biar layout-nya kebentuk dulu
+  });
+</script>
+<script>
+  function scrollHorizontally(e) {
+    const container = e.currentTarget;
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      container.scrollLeft += e.deltaY;
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('.admin-list');
+    const cards = document.querySelectorAll('.admin-card');
+    const target = cards[1]; // Ryy Sensei
+
+    const scrollToCenter = () => {
+      const listRect = list.getBoundingClientRect();
+      const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+      list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    };
+
+    setTimeout(scrollToCenter, 200); // Delay supaya layout kebentuk dulu
+  });
+</script>
+<script>
+  function bukaPopup(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.classList.add('popup-open');
+  }
+
+  function tutupPopup(id) {
+    document.getElementById(id).classList.remove('active');
+    if (
+      !document.getElementById('popupMember').classList.contains('active') &&
+      !document.getElementById('popupDetail').classList.contains('active')
+    ) {
+      document.body.classList.remove('popup-open');
+    }
+  }
+
+  document.querySelectorAll('.popup-member').forEach(popup => {
+    popup.addEventListener('click', function(e) {
+      if (e.target === this) {
+        tutupPopup(this.id);
+      }
+    });
+  });
+</script>
+<script>
+  const popup = document.getElementById('popupMember');
+
+  function showPopupMember() {
+    popup.classList.add('show');
+  }
+
+  function hidePopupMember() {
+    popup.classList.remove('show');
+  }
+
+  // Tombol buka
+  document.getElementById('btnDaftarMember').addEventListener('click', () => {
+    showPopupMember();
+  });
+
+  // Klik di luar isi popup untuk nutup
+  document.addEventListener('click', function (e) {
+    const content = popup.querySelector('.popup-content');
+    if (e.target === popup && !content.contains(e.target)) {
+      hidePopupMember();
+    }
+  });
+</script>
+<!-- Script: Load and render shuffled member list with TikTok detail popup -->
+<script>
+  const popupMember = document.getElementById("popupMember");
+  const listMember = document.getElementById("listMember");
+  const jumlahAnggota = document.getElementById("jumlahAnggota");
+  const searchInput = document.getElementById("searchMember");
+  const popupDetail = document.getElementById("popupDetail");
+  const detailContent = document.getElementById("detailContent");
+  let memberData = [];
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  document.getElementById("btnDaftarMember").addEventListener("click", async () => {
+    popupMember.classList.add("show");
+    listMember.innerHTML = "";
+    jumlahAnggota.textContent = "Fetching data from server...";
+    searchInput.value = "";
+
+    try {
+      const res = await fetch('./database/daftar_kgn.json');
+      const data = await res.json();
+      const entries = Object.entries(data);
+      memberData = shuffleArray(entries);
+      renderList(memberData);
+      jumlahAnggota.textContent = `Jumlah member saat ini : ${entries.length}`;
+    } catch (e) {
+      listMember.innerHTML = "Failed to fetch data.";
+      jumlahAnggota.textContent = "Failed to fetch data.";
+    }
+  });
+
+  function renderList(entries) {
+    listMember.innerHTML = "";
+    entries.forEach(([id, member]) => {
+      const card = document.createElement("div");
+      card.className = "member-card";
+      card.textContent = member.nickname;
+
+      card.onclick = async () => {
+        detailContent.innerHTML = `<p style="color:white">Fetching TikTok data...</p>`;
+        try {
+          const response = await fetch(`https://api.siputzx.my.id/api/stalk/tiktok?username=${member.username}`);
+          const result = await response.json();
+
+          if (result.status && result.data) {
+            const user = result.data.user;
+            const stats = result.data.statsV2;
+
+            detailContent.innerHTML = `
+              <h3>Member Info</h3>
+              <img src="${user.avatarThumb}" alt="${user.nickname}" style="border-radius:50%;width:80px;height:80px;margin-bottom:10px;">
+              <p><strong>${user.nickname}</strong></p>
+              <p>@${user.uniqueId}</p>
+              <p>${user.signature || '-'}</p>
+              ${user.bioLink?.link ? `<p><a href="${user.bioLink.link}" target="_blank" style="color:#4fc3f7;">${user.bioLink.link}</a></p>` : ''}
+              <p>Followers: <strong>${stats.followerCount.toLocaleString()}</strong></p>
+              <p>Following: <strong>${stats.followingCount.toLocaleString()}</strong></p>
+              <p>Likes: <strong>${stats.heartCount.toLocaleString()}</strong></p>
+              <p>Total Videos: <strong>${stats.videoCount}</strong></p>
+            `;
+          } else {
+            detailContent.innerHTML = `<p style="color:white">Failed to fetch TikTok data</p>`;
+          }
+        } catch (err) {
+          detailContent.innerHTML = `<p style="color:white">Error loading TikTok data</p>`;
+          console.error(err);
+        }
+
+        bukaPopup("popupDetail");
+      };
+
+      listMember.appendChild(card);
+    });
+  }
+
+  // Search filter
+  searchInput.addEventListener("input", e => {
+    const keyword = e.target.value.toLowerCase().trim();
+    const filtered = memberData.filter(([_, member]) =>
+      member.username.toLowerCase().includes(keyword)
+    );
+    renderList(filtered);
+  });
+
+  // Close popups when clicking outside
+  popupMember.addEventListener("click", e => {
+    if (e.target === popupMember) popupMember.classList.remove("show");
+  });
+  popupDetail.addEventListener("click", e => {
+    if (e.target === popupDetail) popupDetail.classList.remove("show");
+  });
+</script>
+
+<!-- Script: Fetch and render growth bar chart -->
+<script>
+  fetch('./database/member_kgn.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('growthBars');
+    const max = Math.max(...data.map(entry => entry.member));
+
+    data.forEach(entry => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'growth-bar';
+
+      const label = document.createElement('div');
+      label.className = 'growth-label';
+      label.textContent = `${entry.name} ( ${entry.member} members )`;
+
+      const bar = document.createElement('div');
+      bar.className = 'growth-bar-fill';
+      bar.style.width = `${(entry.member / max) * 100}%`;
+
+      wrapper.appendChild(label);
+      wrapper.appendChild(bar);
+      container.appendChild(wrapper);
+    });
+  })
+  .catch(err => {
+    console.error('Failed to fetch member_kgn.json:', err);
+  });
+</script>
+
+<!-- Script: Enable horizontal scroll with mouse wheel -->
+<script>
+  function scrollHorizontally(e) {
+    const container = e.currentTarget;
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      container.scrollLeft += e.deltaY;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel-scroll');
+    if (carousel) {
+      carousel.addEventListener('wheel', scrollHorizontally);
+    }
+  });
+</script>
+
+<!-- Script: Basic carousel navigation with prev/next buttons -->
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+  nextBtn?.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+</script>
+
+<!-- Script: Prevent page from restoring scroll on reload -->
+<script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
