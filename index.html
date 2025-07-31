@@ -21,9 +21,6 @@
   <meta property="og:url" content="https://ajrahhh.my.id" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Main stylesheet (dengan cache buster) -->
-  <link rel="stylesheet" href="style.css?v=1.0" />
-
   <!-- Google Fonts: Manrope & Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
@@ -64,16 +61,6 @@
     </button>
   </div>
 </section>
-
-<!-- Tombol Musik Kecil -->
-<button id="musicButton" class="music-btn" title="Putar Musik">
-  🎵
-</button>
-
-<audio id="bgMusic" loop>
-  <source src="source/lagu.mp3" type="audio/mpeg" />
-  Browser tidak mendukung audio.
-</audio>
 
 <!-- Announcement modal -->
 <div id="pengumumanModal" class="modal">
@@ -266,23 +253,6 @@
   <p>&copy; 2025 <a href="https://www.tiktok.com/@sorawangyy" target="_blank">Sora</a> &amp; <a href="https://www.tiktok.com/@kagenouofficial" target="_blank">KDev's</a>. Hak cipta dilindungi.</p>
   <p>📱 Ikuti <a href="https://www.tiktok.com/@kagenouofficial" target="_blank">Kagenou Family</a> di TikTok</p>
 </footer>
-
-<script>
-  const musicBtn = document.getElementById('musicButton');
-  const music = document.getElementById('bgMusic');
-  let isPlaying = false;
-
-  musicBtn.addEventListener('click', () => {
-    if (!isPlaying) {
-      music.play();
-      musicBtn.textContent = '⏸️';
-    } else {
-      music.pause();
-      musicBtn.textContent = '🎵';
-    }
-    isPlaying = !isPlaying;
-  });
-</script>
 
 <!-- Script: Prevent right-click and drag on nav links -->
 <script>
@@ -747,6 +717,15 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+</script>
+
+<!-- Script: Dynamically load stylesheet with a unique query to prevent caching -->
+<script>
+  const timestamp = Date.now();
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = `style.css?v=${timestamp}`;
+  document.head.appendChild(link);
 </script>
 </body>
 </html>
