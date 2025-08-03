@@ -1,9 +1,30 @@
 [
-  { "name": "Kagenou Family", "member": 210 },
-  { "name": "Kagenou Family II", "member": 310 },
-  { "name": "Kagenou Family III", "member": 193 },
-  { "name": "KGN Bot Area", "member": 182 },
-  { "name": "KGN MLBB Area", "member": 235 },
-  { "name": "KGN FF Area", "member": 145 },
-  { "name": "KGN Editor Area", "member": 120 }
+  {
+    "name": "Kagenou Family",
+    "member": 303
+  },
+  {
+    "name": "Kagenou Family II",
+    "member": 239
+  },
+  {
+    "name": "Kagenou Family III",
+    "member": 28
+  },
+  {
+    "name": "KGN Bot Area",
+    "member": 157
+  },
+  {
+    "name": "KGN MLBB Area",
+    "member": 168
+  },
+  {
+    "name": "KGN FF Area",
+    "member": 61
+  },
+  {
+    "name": "KGN Editor Area",
+    "member": 90
+  }
 ]
