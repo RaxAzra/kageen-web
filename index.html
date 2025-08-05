@@ -556,15 +556,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('load', () => {
     const list = document.querySelector('.admin-list');
-    const target = document.getElementById('ryy'); // Ryy Sensei
+    const target = document.getElementById('ryy'); // Target card Ryy
   
-    const scrollToCenter = () => {
-      const listRect = list.getBoundingClientRect();
-      const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
-      list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-    };
-  
-    scrollToCenter();
+    const listRect = list.getBoundingClientRect();
+    const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+    
+    list.scrollLeft = scrollLeft; // Instant, tanpa animasi
   });
 </script>
 <script>
@@ -809,6 +806,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
