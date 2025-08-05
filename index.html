@@ -554,23 +554,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  window.addEventListener('load', () => {
+  window.addEventListener('DOMContentLoaded', () => {
     const list = document.querySelector('.admin-list');
-    const target = document.getElementById('ryy');
-    if (!list || !target) return;
+    const cards = document.querySelectorAll('.admin-card');
+    const target = cards[1]; // Ryy Sensei
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const listRect = list.getBoundingClientRect();
-        const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
-        
-        list.scrollLeft = scrollLeft;
+    const scrollToCenter = () => {
+      const listRect = list.getBoundingClientRect();
+      const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+      list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    };
 
-        // Munculkan dengan animasi lembut
-        list.style.opacity = '1';
-        list.style.pointerEvents = 'auto';
-      });
-    });
+    setTimeout(scrollToCenter, 200); // Delay supaya layout kebentuk dulu
   });
 </script>
 <script>
@@ -815,6 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
