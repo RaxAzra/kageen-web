@@ -682,12 +682,11 @@ body.popup-open {
   justify-content: flex-start;
 
   scroll-behavior: auto;
-  visibility: hidden; /* SEMBUNYIKAN SAAT AWAL */
-  position: relative;
-}
 
-.admin-list::-webkit-scrollbar {
-  display: none;
+  /* Ganti visibility */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
 .admin-card {
@@ -1033,6 +1032,7 @@ body.popup-open {
     0 0 10px #5e2d79,
     0 0 20px #6a0dad;
 }
+
 
 
 
