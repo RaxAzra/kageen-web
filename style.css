@@ -686,6 +686,10 @@ body.popup-open {
   display: none; /* Chrome, Safari, Opera */
 }
 
+.admin-list {
+  visibility: hidden; /* <== hanya sementara! */
+}
+
 .admin-card {
   flex: 0 0 80vw; /* Biar satu card per view di HP */
   max-width: 200px;
@@ -1029,3 +1033,4 @@ body.popup-open {
     0 0 10px #5e2d79,
     0 0 20px #6a0dad;
 }
+
