@@ -679,14 +679,7 @@ body.popup-open {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  justify-content: flex-start;
-
-  scroll-behavior: auto;
-
-  /* Ganti visibility */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
+  justify-content: flex-start; /* <== PENTING */
 }
 
 .admin-card {
@@ -1032,6 +1025,7 @@ body.popup-open {
     0 0 10px #5e2d79,
     0 0 20px #6a0dad;
 }
+
 
 
 
