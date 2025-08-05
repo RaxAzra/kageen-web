@@ -681,9 +681,9 @@ body.popup-open {
   -ms-overflow-style: none;
   justify-content: flex-start;
 
-  scroll-behavior: auto; /* scroll langsung, tanpa smooth */
-  visibility: hidden;     /* sembunyikan saat posisi belum fix */
-  position: relative;     /* penting agar offset bisa dihitung benar */
+  scroll-behavior: auto;
+  visibility: hidden; /* SEMBUNYIKAN SAAT AWAL */
+  position: relative;
 }
 
 .admin-list::-webkit-scrollbar {
@@ -1033,5 +1033,6 @@ body.popup-open {
     0 0 10px #5e2d79,
     0 0 20px #6a0dad;
 }
+
 
 
