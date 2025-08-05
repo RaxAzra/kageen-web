@@ -214,9 +214,6 @@
 <h2 class="admin-title">Leader Family Kagenou</h2>
 <div class="admin-wrapper" id="leaderSection">
   <div class="admin-list" onwheel="scrollHorizontally(event)">
-    
-    <!-- Left spacer -->
-    <div class="admin-spacer" id="spacer" style="min-width: 0;"></div>
 
     <div class="admin-card">
       <img src="./source/admin/vinz.jpeg" alt="Chibi" class="admin-avatar" />
@@ -554,26 +551,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
     const list = document.querySelector('.admin-list');
     const target = document.getElementById('ryy');
-    const spacer = document.getElementById('spacer');
+    if (!list || !target) return;
 
-    if (!list || !target || !spacer) return;
+    // Gunakan dua lapis frame agar layout pasti fix
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const listRect = list.getBoundingClientRect();
+        const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
 
-    // Hitung jarak ke tengah
-    const listRect = list.getBoundingClientRect();
-    const targetOffset = target.offsetLeft;
-    const scrollTo = targetOffset - (listRect.width / 2) + (target.offsetWidth / 2);
-
-    // Trik: ubah spacer biar offset target jadi terlihat dari awal
-    spacer.style.minWidth = `${scrollTo}px`;
-
-    // Pindahkan scroll langsung
-    list.scrollLeft = scrollTo;
-
-    // Baru tampilkan
-    list.style.visibility = 'visible';
+        list.scrollLeft = scrollLeft;
+        list.style.visibility = 'visible'; // Tampilkan setelah posisi benar
+      });
+    });
   });
 </script>
 <script>
@@ -818,6 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
