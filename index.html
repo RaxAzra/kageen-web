@@ -554,18 +554,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {  // Gunakan 'load' agar semua elemen benar-benar ter-render
     const list = document.querySelector('.admin-list');
-    const cards = document.querySelectorAll('.admin-card');
-    const target = cards[1]; // Ryy Sensei
-
-    const scrollToCenter = () => {
-      const listRect = list.getBoundingClientRect();
-      const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
-      list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-    };
-
-    setTimeout(scrollToCenter, 200); // Delay supaya layout kebentuk dulu
+    const target = document.querySelector('#ryy');  // Ambil langsung menggunakan querySelector
+  
+    if (target) {
+      const scrollToCenter = () => {
+        const listRect = list.getBoundingClientRect();
+        const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+        list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      };
+  
+      setTimeout(scrollToCenter, 200);  // Menunda sedikit untuk memastikan layout terbentuk
+    } else {
+      console.error("Elemen dengan ID 'ryy' tidak ditemukan");
+    }
   });
 </script>
 <script>
@@ -810,6 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
