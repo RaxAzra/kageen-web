@@ -546,6 +546,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const list = document.querySelector('.admin-list');
+    const target = document.getElementById('ryy');
+    if (!list || !target) return;
+
+    // Hitung posisi scroll
+    const listRect = list.getBoundingClientRect();
+    const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+    list.scrollLeft = scrollLeft;
+
+    // Tampilkan list setelah posisi sudah pas
+    list.style.visibility = 'visible';
+  });
+
   function scrollHorizontally(e) {
     const container = e.currentTarget;
     if (e.deltaY !== 0) {
@@ -553,23 +567,6 @@ document.addEventListener("DOMContentLoaded", () => {
       container.scrollLeft += e.deltaY;
     }
   }
-
-  window.addEventListener('load', () => {
-    // Tunggu layout benar-benar stabil
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const list = document.querySelector('.admin-list');
-        const target = document.getElementById('ryy');
-
-        if (!list || !target) return;
-
-        const listRect = list.getBoundingClientRect();
-        const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
-
-        list.scrollLeft = scrollLeft; // Scroll langsung tanpa animasi
-      });
-    });
-  });
 </script>
 <script>
   function bukaPopup(id) {
@@ -813,6 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
