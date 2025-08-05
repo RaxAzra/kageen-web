@@ -554,18 +554,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
     const list = document.querySelector('.admin-list');
-    const cards = document.querySelectorAll('.admin-card');
     const target = document.getElementById('ryy'); // Ryy Sensei
-
+  
     const scrollToCenter = () => {
       const listRect = list.getBoundingClientRect();
       const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
       list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
     };
-
-    setTimeout(scrollToCenter, 200); // Delay supaya layout kebentuk dulu
+  
+    scrollToCenter();
   });
 </script>
 <script>
@@ -810,6 +809,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
