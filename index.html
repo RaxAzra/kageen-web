@@ -554,18 +554,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  window.addEventListener('load', () => {  // Gunakan 'load' agar semua elemen benar-benar ter-render
+  window.addEventListener('load', () => {  // Menunggu semua elemen selesai dimuat
     const list = document.querySelector('.admin-list');
     const target = document.querySelector('#ryy');  // Ambil elemen dengan ID 'ryy' (Ryy)
   
     if (target) {
-      const scrollToCenter = () => {
-        const listRect = list.getBoundingClientRect();
-        const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
-        list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-      };
-  
-      setTimeout(scrollToCenter, 200);  // Menunda sedikit untuk memastikan layout terbentuk
+      const listRect = list.getBoundingClientRect();
+      const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+      list.scrollTo({ left: scrollLeft, behavior: 'auto' });  // scroll langsung ke Ryy
     } else {
       console.error("Elemen dengan ID 'ryy' tidak ditemukan");
     }
@@ -813,6 +809,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
