@@ -555,13 +555,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener('load', () => {
-    const list = document.querySelector('.admin-list');
-    const target = document.getElementById('ryy'); // Target card Ryy
-  
-    const listRect = list.getBoundingClientRect();
-    const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
-    
-    list.scrollLeft = scrollLeft; // Instant, tanpa animasi
+    // Tunggu layout benar-benar stabil
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const list = document.querySelector('.admin-list');
+        const target = document.getElementById('ryy');
+
+        if (!list || !target) return;
+
+        const listRect = list.getBoundingClientRect();
+        const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
+
+        list.scrollLeft = scrollLeft; // Scroll langsung tanpa animasi
+      });
+    });
   });
 </script>
 <script>
@@ -806,6 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
