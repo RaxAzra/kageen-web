@@ -559,14 +559,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = document.getElementById('ryy');
     if (!list || !target) return;
 
-    // Gunakan dua lapis frame agar layout pasti fix
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const listRect = list.getBoundingClientRect();
         const scrollLeft = target.offsetLeft - (listRect.width / 2) + (target.offsetWidth / 2);
-
+        
         list.scrollLeft = scrollLeft;
-        list.style.visibility = 'visible'; // Tampilkan setelah posisi benar
+
+        // Munculkan dengan animasi lembut
+        list.style.opacity = '1';
+        list.style.pointerEvents = 'auto';
       });
     });
   });
@@ -813,6 +815,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
