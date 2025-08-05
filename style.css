@@ -679,15 +679,15 @@ body.popup-open {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  justify-content: flex-start; /* <== PENTING */
+  justify-content: flex-start;
+
+  scroll-behavior: auto; /* scroll langsung, tanpa smooth */
+  visibility: hidden;     /* sembunyikan saat posisi belum fix */
+  position: relative;     /* penting agar offset bisa dihitung benar */
 }
 
 .admin-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-
-.admin-list {
-  visibility: hidden; /* <== hanya sementara! */
+  display: none;
 }
 
 .admin-card {
@@ -1033,4 +1033,5 @@ body.popup-open {
     0 0 10px #5e2d79,
     0 0 20px #6a0dad;
 }
+
 
