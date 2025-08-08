@@ -708,16 +708,16 @@ document.addEventListener("DOMContentLoaded", () => {
               <p>@${user.uniqueId}</p>
               <p>${user.signature || '-'}</p>
               ${user.bioLink?.link ? `<p><a href="${user.bioLink.link}" target="_blank" style="color:#4fc3f7;">${user.bioLink.link}</a></p>` : ''}
-              <p>Followers: <strong>${stats.followerCount.toLocaleString()}</strong></p>
-              <p>Following: <strong>${stats.followingCount.toLocaleString()}</strong></p>
-              <p>Likes: <strong>${stats.heartCount.toLocaleString()}</strong></p>
-              <p>Total Videos: <strong>${stats.videoCount}</strong></p>
+              <p>Pengikut : <strong>${stats.followerCount.toLocaleString()}</strong></p>
+              <p>Mengikuti : <strong>${stats.followingCount.toLocaleString()}</strong></p>
+              <p>Total Suka : <strong>${stats.heartCount.toLocaleString()}</strong></p>
+              <p>Total Video : <strong>${stats.videoCount}</strong></p>
             `;
           } else {
-            detailContent.innerHTML = `<p style="color:white">Failed to fetch TikTok data</p>`;
+            detailContent.innerHTML = `<p style="color:white">Username akun mungkin telah diganti.</p>`;
           }
         } catch (err) {
-          detailContent.innerHTML = `<p style="color:white">Error loading TikTok data</p>`;
+          detailContent.innerHTML = `<p style="color:white">Gagal mengambil data dari TikTok</p>`;
           console.error(err);
         }
 
@@ -841,6 +841,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
