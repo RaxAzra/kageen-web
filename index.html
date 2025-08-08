@@ -107,13 +107,13 @@
 <header id="stickyNavbar">
   <img src="source/komunitas.jpg" alt="Logo KGN" class="navbar-logo" draggable="false" />
   <nav class="nav-links">
-    <a href="#growthBars">Member</a>
+    <a href="#growthBars" class="nav-link">Member</a>
     <span class="separator">|</span>
-    <a href="#topMem">Top</a>
+    <a href="#topMem" class="nav-link">Top</a>
     <span class="separator">|</span>
-    <a href="#tutorial">Join</a>
+    <a href="#tutorial" class="nav-link">Join</a>
     <span class="separator">|</span>
-    <a href="#leaderSection">Leader</a>
+    <a href="#leaderSection" class="nav-link">Leader</a>
   </nav>
 </header>
 
@@ -344,6 +344,28 @@
   navLinks.querySelectorAll('*').forEach(el => {
     el.setAttribute('draggable', 'false'); // Cegah drag native
     el.addEventListener('dragstart', e => e.preventDefault());
+  });
+</script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.nav-link');
+
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetID = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetID);
+
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+
+          // Ini yang ngapus # dari URL
+          history.replaceState(null, '', window.location.pathname);
+        }
+      });
+    });
   });
 </script>
 
@@ -812,6 +834,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
