@@ -704,7 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
             detailContent.innerHTML = `
               <h3>Informasi Member</h3>
               <img src="${user.avatarThumb}" alt="${user.nickname}" style="border-radius:50%;width:80px;height:80px;margin-bottom:10px;">
-              <p><strong>${user.nickname}</strong></p>
+              <p><strong>${user.nickname.replace(/᭄/g, '')}</strong></p>
               <p>@${user.uniqueId}</p>
               <p>${user.signature || '-'}</p>
               ${user.bioLink?.link ? `<p><a href="${user.bioLink.link}" target="_blank" style="color:#4fc3f7;">${user.bioLink.link}</a></p>` : ''}
@@ -841,6 +841,3 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
-
-
-
