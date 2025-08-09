@@ -708,10 +708,10 @@ document.addEventListener("DOMContentLoaded", () => {
               <p>@${user.uniqueId}</p>
               <p>${user.signature || '-'}</p>
               ${user.bioLink?.link ? `<p><a href="${user.bioLink.link}" target="_blank" style="color:#4fc3f7;">${user.bioLink.link}</a></p>` : ''}
-              <p>Pengikut : <strong>${stats.followerCount.toLocaleString()}</strong></p>
-              <p>Mengikuti : <strong>${stats.followingCount.toLocaleString()}</strong></p>
-              <p>Total Suka : <strong>${(n=>n>=1e6?(n/1e6).toFixed(1).replace('.0','')+' jt':n>=1e3?(n/1e3).toFixed(1).replace('.0','')+' rb':n)(stats.heartCount)} (${stats.heartCount})</strong></p>
-              <p>Total Video : <strong>${stats.videoCount}</strong></p>
+              <p>Pengikut : <strong>${(n=>n>=1e6?(n/1e6).toFixed(1).replace('.0','')+' jt':n>=1e3?(n/1e3).toFixed(1).replace('.0','')+' rb':n)(stats.followerCount)}</strong> (${stats.followerCount})</p>
+              <p>Mengikuti : <strong>${(n=>n>=1e6?(n/1e6).toFixed(1).replace('.0','')+' jt':n>=1e3?(n/1e3).toFixed(1).replace('.0','')+' rb':n)(stats.followingCount)}</strong> (${stats.followingCount})</p>
+              <p>Total Suka : <strong>${(n=>n>=1e6?(n/1e6).toFixed(1).replace('.0','')+' jt':n>=1e3?(n/1e3).toFixed(1).replace('.0','')+' rb':n)(stats.heartCount)}</strong> (${stats.heartCount})</p>
+              <p>Total Video : <strong>${stats.videoCount} video</strong></p>
             `;
           } else {
             detailContent.innerHTML = `<p style="color:white">Username akun mungkin telah diganti.</p>`;
