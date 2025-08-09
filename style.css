@@ -882,6 +882,7 @@ body.popup-open {
 }
 
 .top-podium {
+  font-family: 'Satoshi', sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -1025,6 +1026,7 @@ body.popup-open {
     0 0 10px #5e2d79,
     0 0 20px #6a0dad;
 }
+
 
 
 
