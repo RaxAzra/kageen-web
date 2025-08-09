@@ -689,7 +689,7 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(([id, member]) => {
       const card = document.createElement("div");
       card.className = "member-card";
-      card.textContent = member.nickname;
+      card.textContent = member.nickname.replace(/᭄/g, '');
 
       card.onclick = async () => {
         detailContent.innerHTML = `<p style="color:white">Fetching TikTok data...</p>`;
@@ -841,6 +841,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
 
 
 
